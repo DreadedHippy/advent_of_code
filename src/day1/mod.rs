@@ -5,14 +5,7 @@ const NUMBERS_AS_LETTERS: [&str; 10] = [
 	"ze", "on", "tw", "th", "fo", "fi", "si", "se", "ei", "ni"
 ];
 
-pub fn solve_puzzle_1() {
-	// Read input file
-	let mut input_file = File::open("src/day1/puzzle1.txt").expect("Failed to find 'input.txt'");
-	let mut input_string = String::new();
-
-	// input_file.read_to_string(buf)
-
-	input_file.read_to_string(&mut input_string).expect("Failed to read file to string, invalid UTF-8 might be present");
+pub fn solve_puzzle_1(input_string: String) {
 
 	let mut sum_of_numbers: usize = 0;
 
@@ -28,15 +21,7 @@ pub fn solve_puzzle_1() {
 	println!("SUM: {}", sum_of_numbers);
 }
 
-pub fn solve_puzzle_2() {
-	// Read input file
-	let mut input_file = File::open("src/day1/puzzle2.txt").expect("Failed to find 'input.txt'");
-	let mut input_string = String::new();
-
-	// input_file.read_to_string(buf)
-
-	input_file.read_to_string(&mut input_string).expect("Failed to read file to string, invalid UTF-8 might be present");
-
+pub fn solve_puzzle_2(input_string: String) {
 	let mut sum_of_numbers: usize = 0;
 
 
