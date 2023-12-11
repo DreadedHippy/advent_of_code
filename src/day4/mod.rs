@@ -10,7 +10,7 @@ pub fn solve_puzzle_1(input_string: String) {
 
 
 
-		let separated_info = info.split("|").map(|x| x.trim().to_string()).collect::<Vec<String>>();
+		let separated_info = info.split("|").map(|x| x.trim()).collect::<Vec<&str>>();
 		let (winning_numbers, numbers_in_hand) = (separated_info[0].split_whitespace().map(|x| x.trim().parse::<i32>().unwrap()).collect::<Vec<i32>>(), separated_info[1].split_whitespace().map(|x| x.trim().parse::<i32>().unwrap()).collect::<Vec<i32>>());
 
 		let mut set_of_numbers: HashSet<i32> = HashSet::from_iter(winning_numbers.into_iter());
