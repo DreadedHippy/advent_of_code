@@ -1,10 +1,3 @@
-use core::panic;
-use std::{fs::File, io::Read};
-
-const NUMBERS_AS_LETTERS: [&str; 10] = [
-	"ze", "on", "tw", "th", "fo", "fi", "si", "se", "ei", "ni"
-];
-
 pub fn solve_puzzle_1(input_string: String) {
 
 	let mut sum_of_numbers: usize = 0;
