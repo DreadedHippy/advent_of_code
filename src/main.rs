@@ -33,7 +33,8 @@ fn main() {
 	let mut input_string = String::new();
 	input_file.read_to_string(&mut input_string).expect("Failed to read file to string, invalid UTF-8 might be present");
 
-		day4::solve_puzzle_1(input_string);
+		// day4::solve_puzzle_1(input_string);
+		day4::solve_puzzle_2(input_string);
 
 
 
