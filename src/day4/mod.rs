@@ -37,8 +37,6 @@ pub fn solve_puzzle_1(input_string: String) {
 
 pub fn solve_puzzle_2(input_string: String) {
 
-	let mut card_frequencies: HashMap<i32, usize> = HashMap::new();
-	let mut card_earnings: HashMap<i32, i32> = HashMap::new();
 
 	let line_count = input_string.lines().count();
 	let mut frequencies: Vec<usize> = Vec::new();
@@ -80,22 +78,7 @@ pub fn solve_puzzle_2(input_string: String) {
 				frequencies[card as usize]+= frequencies[c as usize]
 			}
 		}
-
-		// let current_card_frequency = *card_frequencies.get(&card_id).unwrap_or(&1);
-
-		// for i in card_id..=(card_id+matched_numbers) {
-		// 	*card_frequencies.entry(i).or_insert(0)+= current_card_frequency;
-		// }
-
-		// if card_id == 4 { println!("{:?}", card_frequencies);break};
-
-		// let points_worth = if matched_numbers == 0 {0} else { 2_i32.pow(matched_numbers - 1)};
-
-
-
 	}
-
-	let res: usize = card_frequencies.into_values().sum();
 
 	println!("{}", frequencies.iter().sum::<usize>());
 }
