@@ -1,68 +1,14 @@
 use std::collections::HashMap;
 
+// use day4::day_4_second;
+
+use day5::{day_5_first, day_5_second};
+
+#[allow(unused)]
 use crate::read_puzzle_input;
 
-#[allow(unused)]
-macro_rules! cina {
-    ($t:tt) => {{
-        let mut temp = String::new();
-        std::io::stdin().read_line(&mut temp).expect("fail");
-        temp.split_whitespace()
-            .map(|x| x.parse::<$t>().unwrap())
-            .collect::<Vec<$t>>()
-    }};
-}
-
-
-#[allow(unused)]
-macro_rules! cin {
-    ($t:tt) => {{
-        let mut temp = String::new();
-        std::io::stdin().read_line(&mut temp).expect("fail");
-        temp.trim().parse::<$t>().unwrap()
-    }};
-}
-
-#[allow(unused)]
-macro_rules! cins {
-    () => {{
-        let mut temp = String::new();
-        std::io::stdin().read_line(&mut temp).expect("fail");
-        temp.trim().to_string()
-    }};
-}
-
-#[allow(unused)]
-macro_rules! cinc {
-    () => {{
-        let mut temp = String::new();
-        std::io::stdin().read_line(&mut temp).expect("fail");
-        temp.trim().chars()
-        .collect::<Vec<char>>()
-    }};
-}
-
-#[allow(unused)]
-macro_rules! tuple {
-    [$xs:expr; 2] => {
-        { let value = $xs; (value[0], value[1]) }
-    };
-    [$xs:expr; 3] => {
-        { let value = $xs; (value[0], value[1], value[2]) }
-    };
-    [$xs:expr; 4] => {
-        { let value = $xs; (value[0], value[1], value[2], value[3]) }
-    };
-    [$xs:expr; $t:ty ;2] => {
-        { let value = $xs; (value[0] as $t, value[1] as $t) }
-    };
-    [$xs:expr; $t:ty; 3] => {
-        { let value = $xs; (value[0] as $t, value[1] as $t, value[2] as $t) }
-    };
-    [$xs:expr; $t:ty; 4] => {
-        { let value = $xs; (value[0] as $t, value[1] as $t, value[2] as $t, value[3] as $t) }
-    };
-}
+pub mod day5;
+pub mod day4;
 
 pub fn solve() {
 	// let input = read_puzzle_input("src/year_2024/day1.txt");
@@ -82,8 +28,13 @@ pub fn solve() {
 
     // let input = read_puzzle_input("src/year_2024/day4.txt");
     // day_4_first(input);
-    let input = read_puzzle_input("src/year_2024/day4.txt");
-    day_4_second(input);
+    // let input = read_puzzle_input("src/year_2024/day4.txt");
+    // day_4_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day5.txt");
+    // day_5_first(input);
+    let input = read_puzzle_input("src/year_2024/day5.txt");
+    day_5_second(input);
 
 }
 
@@ -280,93 +231,5 @@ fn parse_brackets(j: usize, input: &Vec<char>, n: usize, res: &mut usize) {
             *res += (a * b) as usize
         },
         _ => {}
-    }
-}
-
-fn day_4_first(input: String) {
-    let grid = input.lines().map(|s| s.chars().collect::<Vec<_>>()).collect::<Vec<_>>();
-    
-
-    let w = grid[0].len();
-    let h = grid.len();
-    let mut count = 0;
-
-    for i in 0..h {
-        for j in 0..w {
-            if grid[i][j] == 'X' {
-                search_xmas(&grid, (i, j), &mut count, h, w);
-            }
-        }
-    }
-
-    println!("{}", count);
-}
-
-fn search_xmas(grid: &Vec<Vec<char>>, position: (usize, usize), count: &mut usize, h: usize, w: usize) {
-    let (i, j) = position;
-
-    if i + 3 < h && (grid[i][j], grid[i+1][j], grid[i+2][j], grid[i+3][j]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-    
-    if i >= 3 && (grid[i][j], grid[i-1][j], grid[i-2][j], grid[i-3][j]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-
-    if j + 3 < w && (grid[i][j], grid[i][j+1], grid[i][j+2], grid[i][j+3]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-
-    if j >= 3 && (grid[i][j], grid[i][j-1], grid[i][j-2], grid[i][j-3]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-
-    if i+3 < h && j + 3 < w && (grid[i][j], grid[i+1][j+1], grid[i+2][j+2], grid[i+3][j+3]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-
-    if i+3 < h && j >= 3 && (grid[i][j], grid[i+1][j-1], grid[i+2][j-2], grid[i+3][j-3]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-
-    if i>= 3 && j + 3 < w && (grid[i][j], grid[i-1][j+1], grid[i-2][j+2], grid[i-3][j+3]) == ('X', 'M', 'A', 'S') {
-        *count += 1;
-    }
-
-    if i>= 3 && j >= 3 && (grid[i][j], grid[i-1][j-1], grid[i-2][j-2], grid[i-3][j-3]) == ('X', 'M', 'A', 'S') {
-        *count += 1
-    }
-}
-
-fn day_4_second(input: String) {
-    let grid = input.lines().map(|s| s.chars().collect::<Vec<_>>()).collect::<Vec<_>>();
-    
-
-    let w = grid[0].len();
-    let h = grid.len();
-    let mut count = 0;
-
-    for i in 0..h {
-        for j in 0..w {
-            if grid[i][j] == 'A' {
-                search_x_mas(&grid, (i, j), &mut count, h, w);
-            }
-        }
-    }
-
-    println!("{}", count);
-}
-
-fn search_x_mas(grid: &Vec<Vec<char>>, position: (usize, usize), count: &mut usize, h: usize, w: usize) {
-    let (i, j) = position;
-    if i > 0 && j > 0 && i+1 < h && j + 1 < w {
-        let a = (grid[i-1][j+1], grid[i+1][j-1]);
-        let b  = (grid[i+1][j+1], grid[i-1][j-1]);
-
-
-
-        if (a == ('M', 'S') || a == ('S', 'M')) && (b == ('M', 'S') || b == ('S', 'M')) {
-            *count += 1;
-        }
     }
 }
