@@ -10,6 +10,7 @@ use day3::{day_3_first, day_3_second};
 use day6::{day_6_first, day_6_second};
 use day7::{day_7_first, day_7_second};
 use day8::{day_8_first, day_8_second};
+use day9::{day_9_first, day_9_second};
 
 #[allow(unused)]
 use crate::read_puzzle_input;
@@ -22,6 +23,7 @@ pub mod day5;
 pub mod day6;
 pub mod day7;
 pub mod day8;
+pub mod day9;
 
 pub fn solve() {
 	// let input = read_puzzle_input("src/year_2024/day1.txt");
@@ -59,7 +61,13 @@ pub fn solve() {
     // let input = read_puzzle_input("src/year_2024/day7.txt");
     // day_7_second(input);
 
-    let input = read_puzzle_input("src/year_2024/day8.txt");
-    day_8_second(input);
-
+    // let input = read_puzzle_input("src/year_2024/day8.txt");
+    // day_8_first(input);
+    // let input = read_puzzle_input("src/year_2024/day8.txt");
+    // day_8_second(input);
+    
+    let input = read_puzzle_input("src/year_2024/day9.txt");
+    day_9_first(input);
+    // let input = read_puzzle_input("src/year_2024/day9.txt");
+    // day_9_second(input);
 }
