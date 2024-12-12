@@ -4,7 +4,7 @@ use std::{collections::HashMap, time::Instant};
 // use day4::day_4_second;
 
 use day10::{day_10_first, day_10_second};
-use day11::day_11_first;
+use day11::{day_11_first, day_11_second};
 use day5::{day_5_first, day_5_second};
 use day1::{day_1_first, day_1_second};
 use day2::{day_2_first, day_2_second};
@@ -80,6 +80,9 @@ pub fn solve() {
     // let input = read_puzzle_input("src/year_2024/day10.txt");
     // day_10_second(input);
 
+    // let input = read_puzzle_input("src/year_2024/day11.txt");
+    // day_11_first(input);
     let input = read_puzzle_input("src/year_2024/day11.txt");
-    day_11_first(input);
+    day_11_second(input);
+    
 }

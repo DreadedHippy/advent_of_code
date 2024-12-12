@@ -9,6 +9,21 @@ pub fn day_11_first(input: String) {
 	let mut sum: u128 = 0;
 
 	for n in l {
+		sum += transform(&"0".to_string(), &n, 0, 25, &mut memo) as u128;
+	}
+
+	println!("{:?}", sum);
+}
+
+pub fn day_11_second(input: String) {
+	let lines = input.lines().map(|x| x.split_whitespace().map(String::from).collect::<Vec<_>>()).collect::<Vec<_>>();
+
+	let mut l = lines[0].clone();
+	let mut memo = HashMap::new();
+
+	let mut sum: u128 = 0;
+
+	for n in l {
 		sum += transform(&"0".to_string(), &n, 0, 75, &mut memo) as u128;
 	}
 
