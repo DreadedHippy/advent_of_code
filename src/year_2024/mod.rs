@@ -7,6 +7,7 @@ use day10::{day_10_first, day_10_second};
 use day11::{day_11_first, day_11_second};
 use day12::{day_12_first, day_12_second};
 use day13::{day_13_first, day_13_second};
+use day14::{day_14_first, day_14_second};
 use day5::{day_5_first, day_5_second};
 use day1::{day_1_first, day_1_second};
 use day2::{day_2_first, day_2_second};
@@ -32,6 +33,7 @@ pub mod day10;
 pub mod day11;
 pub mod day12;
 pub mod day13;
+pub mod day14;
 
 pub fn solve() {
 	// let input = read_puzzle_input("src/year_2024/day1.txt");
@@ -96,6 +98,11 @@ pub fn solve() {
 
     // let input = read_puzzle_input("src/year_2024/day13.txt");
     // day_13_first(input);
-    let input = read_puzzle_input("src/year_2024/day13.txt");
-    day_13_second(input);
+    // let input = read_puzzle_input("src/year_2024/day13.txt");
+    // day_13_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day14.txt");
+    // day_14_first(input);
+    let input = read_puzzle_input("src/year_2024/day14.txt");
+    day_14_second(input);
 }
