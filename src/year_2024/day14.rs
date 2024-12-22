@@ -1,7 +1,5 @@
 use std::{collections::VecDeque, fs, io::Write};
 
-use text_to_png::TextRenderer;
-
 pub fn day_14_first(input: String) {
 	let mut lines = input.lines().map(|x| x.split_whitespace().collect::<Vec<_>>()).collect::<Vec<_>>();
 	let mut robots = Vec::new();
