@@ -8,6 +8,13 @@ use day11::{day_11_first, day_11_second};
 use day12::{day_12_first, day_12_second};
 use day13::{day_13_first, day_13_second};
 use day14::{day_14_first, day_14_second};
+use day15::day_15_first;
+use day16::{day_16_first, day_16_second};
+use day17::{day_17_first, day_17_second};
+use day18::{day_18_first, day_18_second};
+use day19::{day_19_first, day_19_second};
+use day20::{day_20_first, day_20_second};
+use day21::{day_21_first, day_21_first_test_example};
 use day5::{day_5_first, day_5_second};
 use day1::{day_1_first, day_1_second};
 use day2::{day_2_first, day_2_second};
@@ -34,6 +41,13 @@ pub mod day11;
 pub mod day12;
 pub mod day13;
 pub mod day14;
+pub mod day15;
+pub mod day16;
+pub mod day17;
+pub mod day18;
+pub mod day19;
+pub mod day20;
+pub mod day21;
 
 pub fn solve() {
 	// let input = read_puzzle_input("src/year_2024/day1.txt");
@@ -103,6 +117,40 @@ pub fn solve() {
 
     // let input = read_puzzle_input("src/year_2024/day14.txt");
     // day_14_first(input);
-    let input = read_puzzle_input("src/year_2024/day14.txt");
-    day_14_second(input);
+    // let input = read_puzzle_input("src/year_2024/day14.txt");
+    // day_14_second(input);
+
+    
+    // let input = read_puzzle_input("src/year_2024/day15.txt");
+    // day_15_first(input);
+    // let input = read_puzzle_input("src/year_2024/day15.txt");
+    // day_15_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day16.txt");
+    // day_16_first(input);
+    // let input = read_puzzle_input("src/year_2024/day16.txt");
+    // day_16_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day17.txt");
+    // day_17_first(input);
+    // let input = read_puzzle_input("src/year_2024/day17.txt");
+    // day_17_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day18.txt");
+    // day_18_first(input);
+    // let input = read_puzzle_input("src/year_2024/day18.txt");
+    // day_18_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day19.txt");
+    // day_19_first(input);
+    // let input = read_puzzle_input("src/year_2024/day19.txt");
+    // day_19_second(input);
+
+    // let input = read_puzzle_input("src/year_2024/day20.txt");
+    // day_20_first(input);
+    // day_20_second(input);
+
+    let input = read_puzzle_input("src/year_2024/day21.txt");
+    day_21_first(input);
+    // day_21_first_test_example(input);
 }
